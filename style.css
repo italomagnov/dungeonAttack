@@ -68,12 +68,6 @@ html {
 }
 
 .card {
-    /* display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 35%;
-    height: 350px; */
     padding: 20px;
     border-radius: 10px;
     background: var(--bg-card-color);
@@ -142,6 +136,10 @@ button:active {
 .skills {
     display: flex;
     justify-content: space-around;
+}
+
+.log {
+    display: none;
 }
 
 .log ul {
