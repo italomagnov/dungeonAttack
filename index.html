@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <title>El matador Monstro</title>
+  </head>
+  <body>
+    <div id="app">
+        <div class="game-title">
+            <h1 class="title">{{ titulo }}</h1>
+            <small class='subtitle'>ai minha vuaida</small>
+        </div>
+
+      <div class="panel characters">
+
+        <!-- cards do heroi e do monstro -->
+          <div class="card hero">
+            <h3 class="hero__name">O mago do png falso</h3>
+            <img class="card__img" src="./assets/mobs/nerdola.jpg" alt="hero image">
+            <div class="life-bar">
+              <div class="life" :class="{danger: playerLife <= 50}" :style="{width: playerLife+'%'}"></div>
+            </div>
+            <span>{{ playerLife }}</span>
+          </div>
+          <div class="card monster">
+            <h3 class="monster__name">Um Fodendo Dragão</h3>
+            <img class="card__img" src="./assets/mobs/dragon.png" alt="monster image">
+            <div class="life-bar">
+              <div class="life" :class="{danger: monsterLife <= 50}" :style="{width: monsterLife+'%'}"></div>
+            </div>
+            <span>{{ monsterLife }}</span>
+          </div>
+
+      </div>
+
+      <!-- resultado da batalha -->
+      <div v-if="result" class="panel result">
+        <span v-if="monsterLife <= 0" class="victory">Você Ganhou!!! :)</span>
+        <span v-else class="defeat">Você perdeu :(</span>
+      </div>
+
+      <!-- card dos botoes de skill -->
+      <div class="panel skill">
+
+        <form action="" class="skills">
+          <button @click="attack"><img class="skill__img" src="./assets/icons/sword.png" alt=""></button>
+          <button @click="heal"><img class="skill__img" src="./assets/icons/potion.png" alt=""></button>
+          <button><img class="skill__img" src="./assets/icons/fire-png.png" alt=""></button>
+          <button><img class="skill__img" src="./assets/icons/jogging.png" alt=""></button>
+        </form>
+        
+      </div>
+      
+      <!-- card dos logs da batalha -->
+      <div class="panel log">
+        <ul class="log__list">
+          <li class="log__item">Seu ataque causou 13 de dano</li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
