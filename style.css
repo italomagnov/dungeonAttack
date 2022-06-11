@@ -64,15 +64,16 @@ html {
     justify-content: space-around;
     align-items: center;
     text-align: center;
+    gap: 20px;
 }
 
 .card {
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     width: 35%;
-    height: 350px;
+    height: 350px; */
     padding: 20px;
     border-radius: 10px;
     background: var(--bg-card-color);
@@ -92,7 +93,7 @@ img.card__img {
 .life-bar {
     width: 100%;
     height: 30px;
-    margin-top: 20px;
+    margin: 20px 0;
     border: 1px solid var(--text-color);
     border-radius: 10px;
 }
@@ -157,4 +158,9 @@ button:active {
     background: var(--hero-log);
 }
 
-
+@media (max-width: 480px) {
+    .characters {
+        display: flex;
+        flex-direction: column;
+    }
+}
